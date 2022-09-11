@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+.card-buy{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: #393B37;
+   
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #b3b0b050;
+    padding: 2%;
+    align-items: flex-start;
+}
+
+.card-buy .card-buy-title{
+    text-align: center;
+}
+
+.card-buy .card-buy-body{
+    /*background-color: #fff;*/
+    text-align: justify;
+   padding: 2%;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 1px solid #b3b0b050;
+   
+    text-align: justify;
+
+}
+
+.price{
+    font-family: 'Lato', sans-serif;
+    margin-top: 10%;
+    text-align: justify ;
+    font-size: 0.8em;
+    color: #393a3763;
+}
+
+.price .valor{
+    font-family: 'Lato', sans-serif;
+    margin-top: 10%;
+    text-align: right ;
+    font-size: 0.8em;
+    color: #393a3763;
+}
+.card-btn-buy{
+    margin-top: 20px;
+}
+
+
+.card-btn-cupon{
+    margin-top: 20px;
+}
+.card-cupon{
+   /* background-color: #fff;*/
+    text-align: justify;
+    margin-top: 4%;
+    margin: 2%;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 1px solid #b3b0b050;
+    padding: 2%;
+    text-align: center; 
+}
+
+
+.btn-buy{
+    background: #449444e3;
+    border: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    height: 38px;
+    width: 100%;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border: 0px solid #000000;
+    opacity: 0.8;
+}
+
+.btn-buy:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+.btn-coupons{
+    background: #3483fa;
+    border: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8em;
+    height: 38px;
+    width: 100%;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border: 0px solid #000000;
+    opacity: 0.8;
+}
+
+.btn-coupons:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+hr{
+    margin: 2%;
+    color: #393b3786;
+}
+
+input{
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+

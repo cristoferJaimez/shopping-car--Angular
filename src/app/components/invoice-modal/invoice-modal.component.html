@@ -1,0 +1,67 @@
+
+<div class="card-modal">
+    <video src="../../../assets/video/galaga.webm" autoplay="true"  loop="true" poster="Galaga"></video>
+    <div class="card-modal-body">
+        <span class="title-text">
+           <button (click)="navigation()" class="btn-home">Home</button>
+            <br>
+        </span>
+        <table class="tablet-invoice" >
+            <caption>Invoice</caption>
+            <tr>
+                <td colspan="4"><hr></td>
+            </tr>
+                <tr>
+                    <th>#</th>
+                    <th colspan="1">Item</th>
+                    <th>count</th>
+                    <th>price</th>
+                </tr>
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Item</td>
+                    <td>1</td>
+                    <td>$ 200.000</td>
+                </tr>
+            </tbody>
+            <tr>
+                <td colspan="4"><hr></td>
+            </tr>
+            <tfoot>
+                <tr class="text-footer">
+                    <td colspan="3">Coupont</td>
+                    <td>1</td>
+                </tr>
+                <tr class="text-footer">
+                    <td colspan="3">Total</td>
+                    <td>$</td>
+                </tr>
+                <tr class="text-footer">
+                    <td colspan="3">Discount</td>
+                    <td>$</td>
+                </tr>
+                <tr class="text-footer">
+                    <td colspan="3">IVA</td>
+                    <td>$</td>
+                </tr>
+                
+                <tr>
+                    <td colspan="4"><hr></td>
+                </tr>
+                <tr class="text-footer">
+                    <td colspan="3">Total</td>
+                    <td>$</td>
+                </tr>
+            </tfoot>
+        </table>
+        <span class="footer-invocer">
+            Adress:
+        </span>
+        <br>
+        <button class="btn btn-game-over" onclick="print()">Game Over</button>
+    </div>
+</div>
