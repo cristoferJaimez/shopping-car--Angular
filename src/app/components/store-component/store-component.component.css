@@ -1,0 +1,24 @@
+.box01{
+    margin: 8%;
+    color: black;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .box02{
+    width: 20%;
+    margin-right: 10px;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #000000;
+  }
+  
+  .box03{
+    width: 80%;
+    background: white;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #000000;
+  }

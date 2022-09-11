@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+html, body{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9em;
+}
+.card-modal{
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    opacity: 0.7;
+    text-align: center;
+}
+.card-modal .card-modal-body{
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 40px;
+    height:100vh;
+    width:400px;
+     margin:0px auto;
+    background-color:rgb(255, 255, 255);
+     opacity: 0.7;
+}
+
+video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .invoice-text{
+    text-align: justify;
+  }
+
+  .footer-invoicer{
+    text-align: center;
+  }
+
+
+  .btn-home{
+    margin-top: 20px;
+    background: #fa5c34;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    height: 38px;
+    width: 25%;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border: 0px solid #000000;
+    opacity: 0.8;
+    cursor: pointer;
+    float: right;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .btn-home:hover{
+    background-color: #f35959;
+    opacity: 10;
+  }
+
+
+  .btn {
+    margin-top: 50px;
+  }
+
+   .btn-game-over{
+    background: #3483fa;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    height: 38px;
+    width: 50%;
+    border-radius: 2px 2px 2px 2px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    -webkit-border-radius: 2px 2px 2px 2px;
+    border: 0px solid #000000;
+    opacity: 0.8;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .btn-game-over:hover{
+    background-color: #f35959;
+    opacity: 1;
+  }
+
+  table{
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 0.6em;
+  }
+  .text-footer{
+    text-align: left;
+  }
+
+  @media print{
+    .btn-game-over{
+        display: none !important;
+    }
+  }
