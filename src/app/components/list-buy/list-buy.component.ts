@@ -11,16 +11,23 @@ import { Coupons } from '../../interface/coupons'
 })
 export class ListBuyComponent implements OnInit {
 
-  constructor(private router: Router, private servicioCupons: CouponsServicesService) {
+  
 
+  constructor(private router: Router, private servicioCupons: CouponsServicesService) {
+    
+    
   }
 
   buy_: Array<number> = [];
   cup: Array<Coupons> = [];
   textoDeInput: string = ""
   descuento: string = "";
-
+  text_:string = "";
   ngOnInit(): void {
+   this.buy();
+  }
+
+  buy(){
     this.buy_ = JSON.parse(localStorage.getItem('buy')!)
     this.servicioCupons.get_coupons().subscribe(datos => {
       for (let i = 0; i < datos.length; i++) {
@@ -38,9 +45,11 @@ export class ListBuyComponent implements OnInit {
 
   cupon() {
     const found = this.cup.find(element => {
-        if(element.coupons == this.textoDeInput){
+        if(element.coupons === this.textoDeInput){
           this.descuento = element.discount
-          alert('cupon valido')
+          this.text_ = 'Cupon Valido'
+        }else{
+          this.text_ = "cupon invalido"
         }
     });
 

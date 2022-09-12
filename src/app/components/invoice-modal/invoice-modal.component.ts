@@ -24,7 +24,8 @@ export class InvoiceModalComponent implements OnInit {
   navigation(){
     localStorage.removeItem('buy')
     localStorage.removeItem('carrito')
-
+    localStorage.removeItem('descuentos')
+    localStorage.setItem('buy',"[0, 0, 0]")
 
     this.router.navigate(['/home'])
   }
