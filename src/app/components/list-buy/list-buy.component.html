@@ -2,14 +2,14 @@
     <div class="card-buy">
        <div class="card-buy-title">Billing detail</div>
        <br>
-       <div class="card-buy-body">
-            <span class="price">Price: <span class="valor"> $ 00</span></span>
+       <div class="card-buy-body" >
+            <span class="price">Price: <span class="valor" >   {{buy_[2] | currency: 'USD' | lowercase}}  </span></span>
             <hr>
-            <span class="price">IVA: <span class="valor"> $ 00</span></span>
+            <span class="price">IVA: <span class="valor"> {{buy_[0] | currency: 'USD' | lowercase}} </span></span>
             <hr>
             <span class="price">Coupon <span class="valor"> $ 00</span></span>
             <hr>
-            <span class="total">$ 000</span>
+            <span class="total">{{buy_[0]| currency: 'USD' | lowercase}} </span>
 
             <br>
             <div class="card-btn-buy">
