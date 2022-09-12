@@ -15,6 +15,7 @@ export class ShoppingProductComponent implements OnInit {
   constructor( private servicioCliente : ServicesgamesService){}
 
   ngOnInit(): void {
+    localStorage.setItem("carrito",  JSON.stringify(this.car))
     this.servicioCliente.get_game().subscribe(datos => {
         for(let i=0; i<datos.length; i++){
           this.games.push(datos[i]);

@@ -8,11 +8,11 @@ import { ShoppingCarComponent } from './components/shopping-car/shopping-car.com
 
 //Rutas de Navegacion
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch : 'full' },
+  {path: '', redirectTo: 'shopping-car', pathMatch : 'full' },
   {path: 'home', component: HomeComponent },
   {path: 'shopping-car', component: ShoppingCarComponent },
   {path: 'invoicer', component: InvoiceModalComponent },
-  {path: '**', redirectTo: 'home', pathMatch : 'full' }
+  {path: '**', redirectTo: 'shopping-car', pathMatch : 'full' }
  
 ];
 

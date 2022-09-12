@@ -5,11 +5,11 @@
        <div class="card-buy-body" >
             <span class="price">Price: <span class="valor" >   {{buy_[2] | currency: 'USD' | lowercase}}  </span></span>
             <hr>
-            <span class="price">IVA: <span class="valor"> {{buy_[0] | currency: 'USD' | lowercase}} </span></span>
+            <span class="price">IVA: <span class="valor"> {{buy_[1] | currency: 'USD' | lowercase}} </span></span>
             <hr>
-            <span class="price">Coupon <span class="valor"> $ 00</span></span>
+            <span class="price">Coupon <span class="valor"> {{ descuento | percent: '1.1'}}</span></span>
             <hr>
-            <span class="total">{{buy_[0]| currency: 'USD' | lowercase}} </span>
+            <span class="total">{{buy_[0]   | currency: 'USD' | lowercase}} </span>
 
             <br>
             <div class="card-btn-buy">
@@ -23,10 +23,14 @@
 
 <div class="card-btn-cupon">
     <div class="card-cupon">
-        <span>N° Coupons</span>
-        <input type="text" autofocus>
-        
-        <button class="btn-coupons">Apply coupon</button>
+        <span>N° Coupons</span> 
+        <input [(ngModel)]='textoDeInput' 
+type="text" 
+class="form-control" 
+placeholder="" 
+aria-label="" 
+aria-describedby="basic-addon1">
+<button class="btn-coupons" *ngIf='textoDeInput'  (click)="cupon()">Apply coupon</button>
     </div>
     <br>
    

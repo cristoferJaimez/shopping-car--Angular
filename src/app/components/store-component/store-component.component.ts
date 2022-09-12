@@ -10,6 +10,7 @@ export class StoreComponentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
 }

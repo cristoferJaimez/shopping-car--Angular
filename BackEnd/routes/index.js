@@ -80,5 +80,14 @@ router.get('/API/products', (req,res) =>{
     })
 })
 
+//cupon
+router.get('/API/coupons', (req,res) =>{
+    let qr = "SELECT * FROM tbl_coupons"
+    conx.query(qr, function (err, result) {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
 
 module.exports = router;

@@ -25,7 +25,7 @@
                     <td></td>
                     <td style="float: left;">{{item.name_product}}</td>
                     <td>01</td>
-                    <td style="float: right;">{{item.price_product  | currency: 'USD' | lowercase}}</td>
+                    <td style="float: right;">{{ item.price_product  | currency: 'USD' | lowercase}}</td>
                 </tr>
             </tbody>
             <tr>
@@ -40,10 +40,7 @@
                     <td colspan="3">Total</td>
                     <td style="float: right;">{{ buy_[2]  | currency: 'USD' | lowercase }}</td>
                 </tr>
-                <tr class="text-footer">
-                    <td colspan="3">Discount</td>
-                    <td>$</td>
-                </tr>
+               
                 <tr class="text-footer">
                     <td colspan="3">IVA</td>
                     <td style="float: right;">{{ buy_[1]  | currency: 'USD' | lowercase }}</td>
@@ -55,6 +52,10 @@
                 <tr class="text-footer">
                     <td colspan="3">Total</td>
                     <td style="float: right;">{{ buy_[0]  | currency: 'USD' | lowercase }}</td>
+                </tr>
+                <tr class="text-footer">
+                    <td colspan="3">Total Descuento</td>
+                    <td style="float: right;">{{ buy___  | currency: 'USD' | lowercase }}</td>
                 </tr>
             </tfoot>
         </table>
