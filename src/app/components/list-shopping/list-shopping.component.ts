@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Output, EventEmitter, Input } from '@angular/core';
 import { ServicesgamesService } from '../../services/servicesgames.service'
 import { Games } from '../../interface/games'
-import { json } from 'express';
+import { ListBuyComponent } from '../list-buy/list-buy.component'
 
 @Component({
   selector: 'list-shopping',
@@ -10,9 +10,15 @@ import { json } from 'express';
 })
 export class ListShoppingComponent implements OnInit {
 
+  @Input() texto: string = "";
+
   num_: Array<number> = [];
   games:Array<Games> = [];
   car:Array<Games> = [];
+  total:number = 0;
+  Iva:number = 0;
+  Iva_Total = 0;
+
   constructor(private servicioCliente : ServicesgamesService) { }
 
   ngOnInit(): void {
@@ -22,7 +28,7 @@ export class ListShoppingComponent implements OnInit {
 
   //remover
   remove(id:object){
-  
+    
     localStorage.removeItem('carrito')
     this.car.forEach((val,i,arr)=>{
       if( JSON.stringify(arr[i])== JSON.stringify(id) ){        
@@ -32,16 +38,18 @@ export class ListShoppingComponent implements OnInit {
     localStorage.setItem("carrito",  JSON.stringify(this.car))
     })
 
-    console.log(this.car);
+    //console.log(this.car);
     
-
-    this.car = []
+    //this.car = []
     this.reloadComponent()
   }
 
   reloadComponent() {
+    //actualizar componente hijo
+    
+
     this.num_ = JSON.parse(localStorage.getItem('carrito')!)
-    console.log(this.num_);
+    //console.log(this.num_);
 
     this.servicioCliente.get_game().subscribe(datos => {
       for(let i=0; i<datos.length; i++){
@@ -57,10 +65,34 @@ export class ListShoppingComponent implements OnInit {
             }
         }
       }
-      
-      console.log(this.car);
+      this.buy(this.car)
+  
+      //console.log(this.car);
 
       });
+
+      
+  }
+
+  buy(car:Array<Games>){
+    
+    
+
+    car.forEach((val, i , arr) => {
+      this.total = this.total + Number(arr[i].price_product)
+    })   
+    this.Iva = this.total * 0.019;
+    this.Iva_Total = this.total + this.Iva;
+    console.log(this.total, this.Iva);
+    
+    if(this.car.length === 0){
+      localStorage.setItem("buy",  JSON.stringify([0, 0,0]))
+    }else{
+      localStorage.setItem("buy",  JSON.stringify([this.Iva_Total, this.Iva, this.total]))
+    }
+
+  
+
 
   }
 
