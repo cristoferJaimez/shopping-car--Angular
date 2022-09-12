@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    
+   }
 
   ngOnInit(): void {
   }
@@ -20,4 +22,5 @@ export class NavBarComponent implements OnInit {
   navigation_home(){
     this.router.navigate(['/home'])
   }
+
 }

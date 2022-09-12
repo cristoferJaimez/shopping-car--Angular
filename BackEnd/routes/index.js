@@ -30,6 +30,7 @@ router.get('/API/games', (req, res) => {
     let qr = "SELECT tbl_category.category, \n" + 
              "tbl_plataform.plataform,  \n" +
              "tbl_plataform.version,  \n" +
+             "tbl_product.idtbl_product,  \n" +
              "tbl_product.name_product,  \n" +
              "tbl_product.price_product,  \n" +
              " tbl_product.image,  \n" +
@@ -48,4 +49,36 @@ router.get('/API/games', (req, res) => {
         res.send(result)
     })
 })
+
+
+
+//categorias
+router.get('/API/category', (req,res) =>{
+    let qr = "SELECT * FROM tbl_category"
+    conx.query(qr, function (err, result) {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+//plataformas
+router.get('/API/plataform', (req,res) =>{
+    let qr = "SELECT DISTINCT tbl_plataform.plataform FROM tbl_plataform "
+    conx.query(qr, function (err, result) {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+
+//plataformas
+router.get('/API/products', (req,res) =>{
+    let qr = "SELECT * FROM tbl_product"
+    conx.query(qr, function (err, result) {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+
+
 module.exports = router;
