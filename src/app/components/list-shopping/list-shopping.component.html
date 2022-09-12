@@ -1,21 +1,22 @@
 <div class="card-list">
-    <div class="list-prod">
+    <div class="list-prod" *ngFor="let item of car">
         <div class="list-img">
-            <img  src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2020/07/caratula-spider-man-miles-morales-ps5-1991233.jpg?itok=LPB-Yd4y" alt="img-product">
+            <img  src={{item.image}} alt="img-product">
         </div>
         <div class="list-info">
-            <h1 class="list-info-title">Titulo</h1>
-            <h1 class="list-info-des">Plataform</h1>
+            <h1 class="list-info-title">Titulo : {{ item.name_product }}</h1>
+            <h1 class="list-info-des">Plataform : {{ item.plataform }} </h1>
             
         </div>
         <div class="btn-list">
+            <span>{{ item.price_product | currency: 'USD' | lowercase }}</span>
             <div class="count"> 
                 <button class="btn btn-down">-</button>
                 <span>01</span>
                 <button class= " btn btn-up">+</button>
             </div>
             <br>
-            <button class="btn-remove">Remove</button>
+            <button class="btn-remove" (click)="remove(item)">Remove</button>
         </div>
     </div>
 </div>

@@ -14,6 +14,12 @@ import { ListBuyComponent } from './components/list-buy/list-buy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InvoiceModalComponent } from './components/invoice-modal/invoice-modal.component';
 
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { FiltersPipe } from './pipe/filters.pipe'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +31,15 @@ import { InvoiceModalComponent } from './components/invoice-modal/invoice-modal.
     NavBarComponent,
     ListShoppingComponent,
     ListBuyComponent,
-    InvoiceModalComponent
+    InvoiceModalComponent,
+    FiltersPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

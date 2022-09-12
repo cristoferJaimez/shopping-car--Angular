@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 
-.shopping-filter .card-filter {
+.shopping-filter .card-filter {     
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     color: #393B37;
     margin-top: 2%;
-    margin: 2%;
     border-radius: 9px 9px 9px 9px;
     -moz-border-radius: 9px 9px 9px 9px;
     -webkit-border-radius: 9px 9px 9px 9px;
@@ -50,20 +49,26 @@ hr{
 }
 
 
+.item-filter-cont {
+    display: inline;
+}
+
 .item-filter {
     margin: 1%;
     background-color: #393b3752;
     color: #ffffff;
     padding: 2%;
+    display: inline;
     font-size: 0.7em;
     border-radius: 9px 9px 9px 9px;
     -moz-border-radius: 9px 9px 9px 9px;
     -webkit-border-radius: 9px 9px 9px 9px;
     border: 0px solid #464ca7e7;
     cursor: pointer;
-    align-items: flex-start;
     opacity: 0.8;
 }
+
+
 
 .item-filter:hover{
     opacity: 2;

@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { InvoiceModalComponent } from './components/invoice-modal/invoice-modal.component';
 import { ShoppingCarComponent } from './components/shopping-car/shopping-car.component';
 
+
+
 //Rutas de Navegacion
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch : 'full' },
