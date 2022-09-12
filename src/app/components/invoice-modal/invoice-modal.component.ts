@@ -10,6 +10,7 @@ import { Games } from 'src/app/interface/games';
 export class InvoiceModalComponent implements OnInit {
   buy_: Array<number> = [];
   buy__: Array<Games> = [];
+  buy___: string = "";
 
   constructor(private router: Router) { }
 
@@ -21,15 +22,23 @@ export class InvoiceModalComponent implements OnInit {
   }
 
   navigation(){
+    localStorage.removeItem('buy')
+    localStorage.removeItem('carrito')
+
+
     this.router.navigate(['/home'])
   }
 
   invoice(){
     this.buy__ =  JSON.parse(localStorage.getItem('carrito')!)
     this.buy_ =  JSON.parse(localStorage.getItem('buy')!)
+    this.buy___=  JSON.parse(localStorage.getItem('descuentos')!)
+
    
     console.log(this.buy__);
     
   }
+
+  
 
 }

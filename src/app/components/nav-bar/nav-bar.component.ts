@@ -13,10 +13,12 @@ export class NavBarComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
   }
 
   navigation(){
     this.router.navigate(['/shopping-car'])
+     
   }
 
   navigation_home(){
