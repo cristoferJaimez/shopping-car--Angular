@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { ServicesgamesService } from '../../services/servicesgames.service'
 import { Games } from '../../interface/games'
 
 @Component({
   selector: 'list-shopping',
   templateUrl: './list-shopping.component.html',
-  styleUrls: ['./list-shopping.component.css']
+  styleUrls: ['./list-shopping.component.css'],
+  
 })
 export class ListShoppingComponent implements OnInit {
 
@@ -17,12 +18,13 @@ export class ListShoppingComponent implements OnInit {
   Iva: number = 0;
   Iva_Total = 0;
 
+  
   constructor(private servicioCliente: ServicesgamesService) {
     this.reloadComponent()
   }
 
   ngOnInit(): void {
-
+    
   }
 
 
@@ -51,19 +53,19 @@ export class ListShoppingComponent implements OnInit {
   reloadComponent() {
     try {
       //actualizar componente hijo
+      
 
-
-      this.num_ = JSON.parse(localStorage.getItem('carrito')!)
-      //console.log(this.num_);
+      this.num_ = JSON.parse( localStorage.getItem('carrito')!)
+      console.log(this.num_);
 
       this.servicioCliente.get_game().subscribe(datos => {
-        for (let i = 0; i < datos.length; i++) {
+        for (let i = 0; i <datos.length; i++) {
           this.games.push(datos[i]);
         }
 
-        for (let i = 0; i < this.num_.length; i++) {
-          for (let x = 0; x < this.games.length; x++) {
-            if (this.num_[i].toString() == this.games[x].idtbl_product.toString()) {
+        for (let i = 0; i <this.num_.length; i++) {
+          for (let x = 0; x <this.games.length; x++) {
+            if (this.num_[i].toString() === this.games[x].idtbl_product.toString()) {
               this.car.push(datos[x])
               break
             }
