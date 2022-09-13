@@ -10,7 +10,13 @@ import { Games } from '../../interface/games'
 })
 export class ListShoppingComponent implements OnInit {
 
-  @Output() private textoEmitido = new EventEmitter<string>();
+  @Output()
+  price:EventEmitter<number> = new EventEmitter();
+  @Output()
+  iva_:EventEmitter<number> = new EventEmitter();
+  @Output()
+  tota_iva:EventEmitter<number> = new EventEmitter();
+
   num_: Array<number> = [];
   games: Array<Games> = [];
   car: Array<Games> = [];
@@ -21,6 +27,8 @@ export class ListShoppingComponent implements OnInit {
   
   constructor(private servicioCliente: ServicesgamesService) {
     this.reloadComponent()
+    
+    this.price.emit()
   }
 
   ngOnInit(): void {
@@ -72,7 +80,8 @@ export class ListShoppingComponent implements OnInit {
           }
         }
         this.buy(this.car)
-
+        
+        
         //console.log(this.car);
 
       });
@@ -99,6 +108,11 @@ export class ListShoppingComponent implements OnInit {
       } else {
         localStorage.setItem("buy", JSON.stringify([this.Iva_Total, this.Iva, this.total]))
       }
+
+      //emitir precios
+      this.price.emit(this.total)
+      this.iva_.emit(this.Iva)
+      this.tota_iva.emit(this.Iva_Total)
 
     } catch (error) {
 
