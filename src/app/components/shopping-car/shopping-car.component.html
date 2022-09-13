@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
 <div class="box01">    
-    <div class="box02"><list-buy></list-buy></div>
-    <div class="box03"><list-shopping></list-shopping></div>
+    <div class="box02"><list-buy [price]="price" [iva]="iva" [total]="total"></list-buy></div>
+    <div class="box03"><list-shopping (price)="price = $event" (iva_)="iva =$event" (tota_iva)="total = $event"></list-shopping></div>
 </div>

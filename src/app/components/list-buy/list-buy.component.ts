@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { CouponsServicesService } from '../../services/coupons-services.service'
 import { Coupons } from '../../interface/coupons'
-
+ 
 
 @Component({
   selector: 'list-buy',
@@ -11,10 +11,14 @@ import { Coupons } from '../../interface/coupons'
 })
 export class ListBuyComponent implements OnInit {
 
-  
+  @Input()
+  price:number = 0;
+  @Input()
+  iva:number = 0;
+  @Input()
+  total:number = 0;
 
   constructor(private router: Router, private servicioCupons: CouponsServicesService) {
-    
     
   }
 
@@ -53,9 +57,9 @@ export class ListBuyComponent implements OnInit {
         }
     });
 
-    this.buy_[0]  = Number(this.buy_[0]) -  (Number(this.buy_[0]) * Number(this.descuento))
-    console.log(this.buy_[0]);
-    localStorage.setItem('descuentos', this.buy_[0].toString())
+    this.total  = Number(this.total) -  (Number(this.total) * Number(this.descuento))
+    console.log(this.total);
+    localStorage.setItem('descuentos', this.total.toString())
   }
 
 
